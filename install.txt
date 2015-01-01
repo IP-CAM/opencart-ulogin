@@ -1,0 +1,14 @@
+
+INSTALLATION
+
+1. Extract everything from archive. You will see "uploads" directory.
+2. Copy all from  "uploads" directory to your OpenCart directory (via FTP or SFTP).
+
+Please write comment if it work fine!
+
+/************************************************************************
+
+1. Извлеките все из архива. Вы увидите папку "uploads".
+2. Скопируйте содержимое  папки "uploads" в папку с вашим OpenCart.
+
+Пожалуйста пишите комментарии если возникнут проблемы.
