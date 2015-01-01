@@ -127,11 +127,11 @@ class ControllerModuleUlogin extends Controller {
             $data['ulogin_status'] = $this->config->get('ulogin_status');
         }
         
-        if (isset($this->request->post['ulogin_module'])) {
-            $data['module'] = $this->request->post['ulogin_module'];
+        if (isset($this->request->post['ulogin_type'])) {
+            $data['type'] = $this->request->post['ulogin_type'];
         }
-        elseif ($this->config->get('ulogin_module')) {
-            $data['module'] = $this->config->get('ulogin_module');
+        elseif ($this->config->get('ulogin_type')) {
+            $data['type'] = $this->config->get('ulogin_type');
         }
         
         if (isset($this->request->post['ulogin_providers'])) {

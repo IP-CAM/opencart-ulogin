@@ -45,7 +45,7 @@
                         <div class="col-sm-10">
                             <select name="ulogin_type" class="form-control">
                                 <?php foreach ($ulogin['type'] as $value): ?>
-                                    <option value="<?php echo $value ?>" <?php echo (isset($module['type'])) ? ($value == $module['type']) ? 'selected="selected"' : '' : '' ?>><?php echo $value ?></option>
+                                    <option value="<?php echo $value ?>" <?php echo (isset($type)) ? ($value == $type) ? 'selected="selected"' : '' : '' ?>><?php echo $value ?></option>
                                 <?php endforeach; ?>                        
                             </select>
                         </div>

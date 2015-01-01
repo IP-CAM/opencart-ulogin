@@ -55,11 +55,11 @@ class Ulogin {
 
     public function render() {
         $params = 'display=' . $this->config['type'] .
-                '&fields=' . implode(',', array_merge($this->config['username'], $this->config['fields'])) .
-                '&providers=' . implode(',', $this->config['providers']) .
-                '&hidden=' . implode(',', $this->config['hidden']) .
-                '&redirect_uri=' . $this->config['redirect_uri'] .
-                '&optional=' . implode(',', $this->config['optional']);
+                ';fields=' . implode(',', array_merge($this->config['username'], $this->config['fields'])) .
+                ';providers=' . implode(',', $this->config['providers']) .
+                ';hidden=' . ((!empty($this->config['hidden'])) ? implode(',', $this->config['hidden']) : '') .
+                ';redirect_uri=' . $this->config['redirect_uri'] .
+                ';optional=' . implode(',', $this->config['optional']);
 
         do {
             $uniq_id = "uLogin_" . rand();
@@ -68,17 +68,14 @@ class Ulogin {
 
         self::$_used_id[] = $uniq_id;
 
-
         $html = '<script src="http://ulogin.ru/js/ulogin.js"></script>';
         if ($this->config['type'] == 'window') {
-
-            $html.='<a id="' . $uniq_id . '" href="#" x-ulogin-params="' . $params . '">';
+            $html.='<a id="' . $uniq_id . '" href="#" data-ulogin="' . $params . '">';
             $html.='<img src="http://ulogin.ru/img/button.png" width=187 height=30 alt="МультиВход"/>';
             $html.='</a>';
         }
         else {
-
-            $html.='<div id="' . $uniq_id . '" x-ulogin-params="' . $params . '"></div>';
+            $html.='<div id="' . $uniq_id . '" data-ulogin="' . $params . '"></div>';
         }
         return $html;
     }
